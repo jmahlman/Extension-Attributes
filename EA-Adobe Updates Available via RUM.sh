@@ -25,7 +25,7 @@ touch $rumlog
 $rum --action=list > $rumlog
 
 if [[ -f $rum ]]; then
-	if [[ "$(grep "Following Updates are applicable" $rumlog)" ]] ; then
+	if [[ "$(grep -i "updates are applicable on the system" "$rumlog")" ]] ; then
 		result="Updates Available"
 	else
 		result="No Updates"
